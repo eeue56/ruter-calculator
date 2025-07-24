@@ -2,7 +2,9 @@
 
 A calculator to find which Ruter (Oslo public transport) ticket is most cost effective.
 
-It was created without a human coder (i.e only AI) - so that I could review the code. I've since made adjustments, but my review can be found as a PR here. You can also see my prompts in the [chat.md](./chat.md) file.
+[Play with it live here](https://ruter.digital-citizen.no/)
+
+It was created without a human coder (i.e only AI) - so that I could review the code. I've since made adjustments, but [my review can be found as a PR here](https://github.com/eeue56/ruter-calculator/pull/1). You can also see my prompts in the [chat.md](./chat.md) file.
 
 I was particularly looking at:
 
@@ -20,4 +22,4 @@ Ruter is the public transport company for Oslo and the surrounding areas. While 
 
 Ruter has faced critism in recent years due to poor service quality, high costs, and aggressive ticket checks.
 
-A tool like this allow people make informed decisions when buying tickets, something which I've been personally missing for a while.
+A tool like this allows people to make informed decisions when buying tickets, something which I've been personally missing for a while.
