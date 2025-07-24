@@ -410,13 +410,13 @@ class RuterDiscountCalculator {
   getPeriodText(period) {
     switch (period) {
       case 1:
-        return "day";
+        return "24 hours";
       case 7:
-        return "week";
+        return "7 days";
       case 30:
-        return "month";
+        return "30 days";
       case 365:
-        return "year";
+        return "365 days";
       default:
         return `${period} days`;
     }
