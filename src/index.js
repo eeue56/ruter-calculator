@@ -4,44 +4,44 @@ class RuterDiscountCalculator {
 
     // Zone-based single ticket prices (NOK)
     this.zonePrices = {
-      1: 39, // Zone 1 only
-      2: 55, // Zones 1-2
-      3: 73, // Zones 1-3
-      4: 91, // Zones 1-4
-      all: 109, // All zones
+      1: 44, // Zone 1 only
+      2: 72, // Zones 1-2
+      3: 101, // Zones 1-3
+      4: 129, // Zones 1-4
+      all: 157, // All zones
     };
 
-    // Zone-based period ticket prices (NOK)
+    // Zone-based period ticket prices (NOK) - Updated with correct Ruter prices
     this.periodTickets = {
       1: {
-        day: { price: 110, name: "24-hour ticket", days: 1 },
-        week: { price: 280, name: "7-day ticket", days: 7 },
-        month: { price: 790, name: "30-day ticket", days: 30 },
-        year: { price: 7900, name: "Annual ticket", days: 365 },
+        day: { price: 132, name: "24-hour ticket", days: 1 },
+        week: { price: 366, name: "7-day ticket", days: 7 },
+        month: { price: 778, name: "30-day ticket", days: 30 },
+        year: { price: 7780, name: "Annual ticket", days: 365 },
       },
       2: {
-        day: { price: 155, name: "24-hour ticket", days: 1 },
-        week: { price: 395, name: "7-day ticket", days: 7 },
-        month: { price: 1110, name: "30-day ticket", days: 30 },
-        year: { price: 11100, name: "Annual ticket", days: 365 },
+        day: { price: 218, name: "24-hour ticket", days: 1 },
+        week: { price: 640, name: "7-day ticket", days: 7 },
+        month: { price: 1745, name: "30-day ticket", days: 30 },
+        year: { price: 17450, name: "Annual ticket", days: 365 },
       },
       3: {
-        day: { price: 205, name: "24-hour ticket", days: 1 },
-        week: { price: 520, name: "7-day ticket", days: 7 },
-        month: { price: 1470, name: "30-day ticket", days: 30 },
-        year: { price: 14700, name: "Annual ticket", days: 365 },
+        day: { price: 303, name: "24-hour ticket", days: 1 },
+        week: { price: 887, name: "7-day ticket", days: 7 },
+        month: { price: 2510, name: "30-day ticket", days: 30 },
+        year: { price: 25100, name: "Annual ticket", days: 365 },
       },
       4: {
-        day: { price: 255, name: "24-hour ticket", days: 1 },
-        week: { price: 650, name: "7-day ticket", days: 7 },
-        month: { price: 1830, name: "30-day ticket", days: 30 },
-        year: { price: 18300, name: "Annual ticket", days: 365 },
+        day: { price: 303, name: "24-hour ticket", days: 1 },
+        week: { price: 887, name: "7-day ticket", days: 7 },
+        month: { price: 2510, name: "30-day ticket", days: 30 },
+        year: { price: 25100, name: "Annual ticket", days: 365 },
       },
       all: {
-        day: { price: 305, name: "24-hour ticket", days: 1 },
-        week: { price: 780, name: "7-day ticket", days: 7 },
-        month: { price: 2190, name: "30-day ticket", days: 30 },
-        year: { price: 21900, name: "Annual ticket", days: 365 },
+        day: { price: 303, name: "24-hour ticket", days: 1 },
+        week: { price: 887, name: "7-day ticket", days: 7 },
+        month: { price: 2510, name: "30-day ticket", days: 30 },
+        year: { price: 25100, name: "Annual ticket", days: 365 },
       },
     };
 
@@ -286,7 +286,7 @@ class RuterDiscountCalculator {
 
     resultsSection.innerHTML = `
             <div class="result-card">
-                <h3>Your Discount Summary</h3>
+                <h3>Your Reis Discount Summary</h3>
                 <p><strong>Zone:</strong> ${zoneText}</p>
                 <p><strong>Current discount level:</strong> ${
                   data.currentDiscount
@@ -330,39 +330,11 @@ class RuterDiscountCalculator {
                         ? "<li>💡 Consider increasing your trips to reach higher discount tiers</li>"
                         : "<li>✅ Great! You're getting good discounts with Reis</li>"
                     }
-                    <li>🎫 Discounts are automatically applied in the Ruter app</li>
-                    <li>📅 Discounts are based on tickets bought in the last 30 days</li>
-                    ${
-                      data.currentDiscount > 0
-                        ? "<li>🔄 Your current discount level will reset if you don't buy tickets for 30 days</li>"
-                        : ""
-                    }
-                    ${
-                      data.period !== 30
-                        ? "<li>⚠️ Remember: actual discounts depend on your 30-day rolling usage</li>"
-                        : ""
-                    }
+                    <li>🎫 Reis discounts are automatically applied in the Ruter app to single ticket</li>
+                    <li>📅 Reis is based on tickets bought in the last 30 days</li>
+                    ${"<li>🔄 Your Reis discount level will reset if you don't buy tickets for 30 days</li>"}
+                    ${"<li>⚠️ Remember: actual discounts depend on your 30-day rolling usage</li>"}
                 </ul>
-            </div>
-
-            <div class="result-card">
-                <h3>Discount Breakdown</h3>
-                <div class="discount-breakdown">
-                    ${data.breakdown
-                      .map(
-                        (tier) => `
-                        <div class="discount-tier">
-                            <strong>Next ${tier.tickets} ticket${
-                          tier.tickets > 1 ? "s" : ""
-                        }</strong><br>
-                            ${tier.discount}% discount<br>
-                            ${tier.pricePerTicket.toFixed(0)} NOK each<br>
-                            <small>(Tickets ${tier.absoluteRange} total)</small>
-                        </div>
-                    `
-                      )
-                      .join("")}
-                </div>
             </div>
         `;
   }
