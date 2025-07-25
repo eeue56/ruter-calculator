@@ -2,9 +2,11 @@
 
 A calculator to find which Ruter (Oslo public transport) ticket is most cost effective.
 
+<img width="200" height="400" alt="image" src="https://github.com/user-attachments/assets/1c4bfca1-ec19-4091-a66f-84d47977a707" />
+
 [Play with it live here](https://ruter.digital-citizen.no/)
 
-It was created without a human coder (i.e only AI) - so that I could review the code. I've since made adjustments, but [my review can be found as a PR here](https://github.com/eeue56/ruter-calculator/pull/1). You can also see my prompts in the [chat.md](./chat.md) file.
+It was created without a human coder (i.e only AI) - so that I could review the code and assess the quality. I've since made adjustments, but [my review can be found as a PR here](https://github.com/eeue56/ruter-calculator/pull/1). You can also see my prompts in the [chat.md](./chat.md) file.
 
 I was particularly looking at:
 
