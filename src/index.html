@@ -8,8 +8,14 @@
   </head>
   <body>
     <header>
-      <h1>Ruter Reis Discount Calculator</h1>
-      <p>Find out what discount you can get on Oslo public transport tickets</p>
+      <div class="language-toggle">
+        <button id="lang-en" class="lang-btn active">🇬🇧 EN</button>
+        <button id="lang-no" class="lang-btn">🇳🇴 NO</button>
+      </div>
+      <h1 data-translate="title">Ruter Reis Discount Calculator</h1>
+      <p data-translate="subtitle">
+        Find out what discount you can get on Oslo public transport tickets
+      </p>
     </header>
 
     <main>
@@ -26,12 +32,14 @@
             value="10"
           />
 
-          <label for="zone-selection">Which zones do you travel in?</label>
+          <label for="zone-selection"
+            >How many zones do you travel through?</label
+          >
           <select id="zone-selection">
-            <option value="1">Zone 1 (Oslo city center)</option>
-            <option value="2" selected>Zones 1-2 (Oslo + inner suburbs)</option>
-            <option value="3">Zones 1-3 (Oslo + outer suburbs)</option>
-            <option value="4">Zones 1-4 (Oslo + extended area)</option>
+            <option value="1">1 zone (Oslo city center)</option>
+            <option value="2" selected>2 zones</option>
+            <option value="3">3 zones</option>
+            <option value="4">4 zones</option>
             <option value="all">All zones (Oslo + Akershus)</option>
           </select>
 
